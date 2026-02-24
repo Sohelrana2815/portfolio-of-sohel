@@ -1,49 +1,66 @@
 "use client";
 
 import { Home, User, FolderKanban, Rss } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const navItems = [
   { id: "home", icon: Home, label: "Home" },
   { id: "about", icon: User, label: "About" },
-  { id: "portfolio", icon: FolderKanban, label: "Portfolio" },
   { id: "skills", icon: User, label: "Skills" },
+  { id: "portfolio", icon: FolderKanban, label: "Portfolio" },
   { id: "blog", icon: Rss, label: "Blog" },
+  { id: "contact", icon: User, label: "Contact" },
 ];
 
 export default function SideNav() {
   const [activeSection, setActiveSection] = useState("home");
+  const isScrollingRef = useRef(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = navItems.map((item) => item.id);
-      const scrollPosition = window.scrollY + 100;
+    const observers: IntersectionObserver[] = [];
 
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (
-            scrollPosition >= offsetTop &&
-            scrollPosition < offsetTop + offsetHeight
-          ) {
-            setActiveSection(section);
-            break;
-          }
+    const handleIntersect = (entries: IntersectionObserverEntry[]) => {
+      // If we are currently executing a smooth scroll from a click, ignore observer updates
+      if (isScrollingRef.current) return;
+
+      entries.forEach((entry) => {
+        // threshold: 0.5 means when 50% of the section is visible
+        if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+          setActiveSection(entry.target.id);
         }
-      }
+      });
     };
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Check initial position
-    return () => window.removeEventListener("scroll", handleScroll);
+    const observerOptions = {
+      root: null, // Use the viewport
+      rootMargin: "0px",
+      threshold: 0.6, // Adjust this: 0.6 means 60% of the section must be visible
+    };
+
+    const observer = new IntersectionObserver(handleIntersect, observerOptions);
+
+    navItems.forEach((item) => {
+      const el = document.getElementById(item.id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    if (!element) return;
+
+    // Set ref to true to temporarily disable observer while jumping to section
+    isScrollingRef.current = true;
+    setActiveSection(sectionId);
+
+    element.scrollIntoView({ behavior: "smooth" });
+
+    // Reset the ref after the scroll animation roughly finishes
+    setTimeout(() => {
+      isScrollingRef.current = false;
+    }, 800);
   };
 
   return (
@@ -53,20 +70,15 @@ export default function SideNav() {
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = activeSection === item.id;
-
           return (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`relative border p-3 rounded-full  transition-all duration-300 ease-out ${
-                isActive
-                  ? "bg-yellow-500 text-black scale-110"
-                  : "bg-gray-800 text-white hover:bg-yellow-500 hover:text-black hover:-translate-x-1"
+              className={`relative border p-3 rounded-full transition-all duration-300 bg-[#444444] cursor-pointer ${
+                isActive ? "bg-yellow-500 text-black scale-110" : "text-white"
               }`}
-              title={item.label}
             >
               <Icon className="w-5 h-5" />
-              <span className="sr-only">{item.label}</span>
             </button>
           );
         })}
@@ -83,14 +95,13 @@ export default function SideNav() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative flex flex-col items-center gap-1 p-2 rounded-lg transition-all duration-300 ease-out ${
+                className={`relative flex flex-col items-center gap-1 p-2 transition-all duration-300 ease-out border rounded-full bg-[#444444] cursor-pointer font-bold ${
                   isActive
-                    ? "text-yellow-500"
-                    : "text-gray-400 hover:text-yellow-500"
+                    ? "text-[#FFFFFF] bg-[#FFB400] scale-110"
+                    : "hover:text-yellow-500"
                 }`}
               >
                 <Icon className="w-5 h-5" />
-                <span className="text-xs font-medium">{item.label}</span>
               </button>
             );
           })}
