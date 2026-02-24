@@ -47,30 +47,55 @@ export default function SideNav() {
   };
 
   return (
-    <nav className="fixed top-1/2 right-2  z-50 -translate-y-1/2 flex flex-col gap-4">
-      {navItems.map((item) => {
-        const Icon = item.icon;
-        const isActive = activeSection === item.id;
+    <>
+      {/* Desktop Side Navigation - XL and above */}
+      <nav className="fixed top-1/2 right-2 z-50 -translate-y-1/2 flex-col gap-4 hidden xl:flex">
+        {navItems.map((item) => {
+          const Icon = item.icon;
+          const isActive = activeSection === item.id;
 
-        return (
-          <button
-            key={item.id}
-            onClick={() => scrollToSection(item.id)}
-            className={`
-              relative border p-3 rounded-full  transition-all duration-300 ease-out cursor-pointer
-              ${
+          return (
+            <button
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className={`relative border p-3 rounded-full  transition-all duration-300 ease-out ${
                 isActive
                   ? "bg-yellow-500 text-black scale-110"
-                  : "bg-[#2B2A2A] text-white hover:bg-yellow-500 hover:text-black hover:-translate-x-1"
-              }
-            `}
-            title={item.label}
-          >
-            <Icon className="w-5 h-5" />
-            <span className="sr-only">{item.label}</span>
-          </button>
-        );
-      })}
-    </nav>
+                  : "bg-gray-800 text-white hover:bg-yellow-500 hover:text-black hover:-translate-x-1"
+              }`}
+              title={item.label}
+            >
+              <Icon className="w-5 h-5" />
+              <span className="sr-only">{item.label}</span>
+            </button>
+          );
+        })}
+      </nav>
+
+      {/* Mobile Bottom Navigation - Below XL */}
+      <nav className="fixed bottom-0 left-0 right-0 z-50 bg-zinc-900 border-t border-zinc-800 xl:hidden">
+        <div className="flex justify-around items-center py-2">
+          {navItems.map((item) => {
+            const Icon = item.icon;
+            const isActive = activeSection === item.id;
+
+            return (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`relative flex flex-col items-center gap-1 p-2 rounded-lg transition-all duration-300 ease-out ${
+                  isActive
+                    ? "text-yellow-500"
+                    : "text-gray-400 hover:text-yellow-500"
+                }`}
+              >
+                <Icon className="w-5 h-5" />
+                <span className="text-xs font-medium">{item.label}</span>
+              </button>
+            );
+          })}
+        </div>
+      </nav>
+    </>
   );
 }
