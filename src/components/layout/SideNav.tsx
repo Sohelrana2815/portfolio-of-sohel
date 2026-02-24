@@ -47,7 +47,7 @@ export default function SideNav() {
   };
 
   return (
-    <nav className="fixed top-1/2 right-2 z-50 -translate-y-1/2 flex flex-col gap-4">
+    <nav className="fixed top-1/2 right-2  z-50 -translate-y-1/2 flex flex-col gap-4">
       {navItems.map((item) => {
         const Icon = item.icon;
         const isActive = activeSection === item.id;

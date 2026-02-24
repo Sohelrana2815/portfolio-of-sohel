@@ -15,7 +15,7 @@ export default function SiteLayout({
       </header>
 
       {/* CENTER RIGHT: Side Navigation Icons */}
-      <aside className="fixed right-16 top-1/2 -translate-y-1/2 z-50 hidden lg:block">
+      <aside className="fixed right-16 top-1/2 -translate-y-1/2 z-50 hidden xl:block">
         <SideNav />
       </aside>
 
