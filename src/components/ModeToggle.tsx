@@ -20,18 +20,16 @@ export function ModeToggle() {
     setTheme(theme === "dark" ? "light" : "dark");
   };
   return (
-    <Button
-      variant="outline"
-      size="icon"
+    <button
       onClick={toggleTheme}
-      className="h-12 w-12 rounded-full flex items-center justify-center cursor-pointer"
+      className="h-12 w-12 rounded-full flex items-center justify-center cursor-pointer bg-[#4B4B4B]"
     >
       {theme === "dark" ? (
         <Sun className="h-6! w-6!" />
       ) : (
-        <Moon className="h-6! w-6!" />
+        <Moon className="h-6! w-6! text-white" />
       )}
       <span className="sr-only">Toggle theme</span>
-    </Button>
+    </button>
   );
 }
