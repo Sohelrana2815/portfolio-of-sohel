@@ -6,7 +6,6 @@ import { useState, useEffect, useRef } from "react";
 const navItems = [
   { id: "home", icon: Home, label: "Home" },
   { id: "about", icon: User, label: "About" },
-  { id: "skills", icon: User, label: "Skills" },
   { id: "portfolio", icon: FolderKanban, label: "Portfolio" },
   { id: "blog", icon: Rss, label: "Blog" },
   { id: "contact", icon: User, label: "Contact" },
