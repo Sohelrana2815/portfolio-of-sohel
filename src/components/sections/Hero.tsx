@@ -19,10 +19,11 @@ export default function Hero() {
           {/* Main Image Container */}
           <div className="relative h-60 w-60 xl:h-full xl:w-full rounded-full xl:rounded-3xl overflow-hidden shadow-2xl border-4 border-zinc-800">
             <Image
-              src="/profile.jpg"
+              src="/profile.png"
               alt="Sohel Rana"
               fill
               className="object-cover"
+              style={{ objectPosition: 'center 15%' }}
               priority
             />
           </div>
