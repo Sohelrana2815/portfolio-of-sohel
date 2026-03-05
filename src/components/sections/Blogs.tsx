@@ -4,15 +4,20 @@ import Image from "next/image";
 
 export default function Blogs() {
   return (
-    <section className="py-20 bg-[#121212] text-white overflow-hidden relative" id="blog">
+    <section
+      className="py-20 bg-[#121212] text-white overflow-hidden relative"
+      id="blog"
+    >
       {/* Background text decoration */}
       <div className="absolute top-10 left-1/2 -translate-x-1/2 flex justify-center items-center select-none pointer-events-none opacity-5">
-        <h1 className="text-[10rem] font-bold tracking-tighter leading-none">POSTS</h1>
+        <h1 className="text-[10rem] font-bold tracking-tighter leading-none">
+          POSTS
+        </h1>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="mb-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight uppercase">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight uppercase">
             MY <span className="text-yellow-500">BLOG</span>
           </h2>
         </div>

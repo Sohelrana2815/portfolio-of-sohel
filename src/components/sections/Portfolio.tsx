@@ -5,8 +5,9 @@ const projects: Project[] = [
     id: 1,
     title: "Project Title",
     description: "Project based brief description/projection fix",
-    image: "/projects/project-1.jpg",
-    liveUrl: "#",
+    image:
+      "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772717255/Screenshot_2026-03-05_192015_fhpm0d.png",
+    liveUrl: "https://l2-b5-a6-courier-pro-api-frontend.vercel.app",
     repoUrl: "#",
     detailsUrl: "#",
   },
@@ -14,17 +15,20 @@ const projects: Project[] = [
     id: 2,
     title: "Project Title",
     description: "Project based brief description/projection fix",
-    image: "/projects/project-2.jpg",
+    image:
+      "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772717259/Screenshot_2026-03-05_191942_sgfpj3.png",
     liveUrl: "https://root-guide-frontend.vercel.app",
     repoUrl: "#",
     detailsUrl: "#",
   },
+
   {
     id: 3,
     title: "Project Title",
     description: "Project based brief description/projection fix",
-    image: "/projects/project-3.jpg",
-    liveUrl: "#",
+    image:
+      " https://res.cloudinary.com/djmhyrvxd/image/upload/v1772717255/Screenshot_2026-03-05_192355_eyrgsn.png",
+    liveUrl: "https://glow-mart-bd.web.app/",
     repoUrl: "#",
     detailsUrl: "#",
   },
@@ -32,7 +36,8 @@ const projects: Project[] = [
     id: 4,
     title: "Project Title",
     description: "Project based brief description/projection fix",
-    image: "/projects/project-4.jpg",
+    image:
+      "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772717254/Screenshot_2026-03-05_192340_ppabtn.png",
     liveUrl: "#",
     repoUrl: "#",
     detailsUrl: "#",
@@ -41,7 +46,8 @@ const projects: Project[] = [
     id: 5,
     title: "Project Title",
     description: "Project based brief description/projection fix",
-    image: "/projects/project-5.jpg",
+    image:
+      "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772717254/Screenshot_2026-03-05_192128_lhlc6s.png",
     liveUrl: "#",
     repoUrl: "#",
     detailsUrl: "#",
@@ -50,7 +56,8 @@ const projects: Project[] = [
     id: 6,
     title: "Project Title",
     description: "Project based brief description/projection fix",
-    image: "/projects/project-6.jpg",
+    image:
+      "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772717254/Screenshot_2026-03-05_192405_atvapz.png",
     liveUrl: "#",
     repoUrl: "#",
     detailsUrl: "#",
@@ -59,7 +66,8 @@ const projects: Project[] = [
     id: 7,
     title: "Project Title",
     description: "Project based brief description/projection fix",
-    image: "/projects/project-7.jpg",
+    image:
+      "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772719544/Screenshot_2026-03-05_200517_fgtq4f.png",
     liveUrl: "#",
     repoUrl: "#",
     detailsUrl: "#",
@@ -68,7 +76,8 @@ const projects: Project[] = [
     id: 8,
     title: "Project Title",
     description: "Project based brief description/projection fix",
-    image: "/projects/project-8.jpg",
+    image:
+      "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772719353/Screenshot_2026-03-05_200206_bcm7ky.png",
     liveUrl: "#",
     repoUrl: "#",
     detailsUrl: "#",
@@ -77,7 +86,8 @@ const projects: Project[] = [
     id: 9,
     title: "Project Title",
     description: "Project based brief description/projection fix",
-    image: "/projects/project-9.jpg",
+    image:
+      "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772719310/Screenshot_2026-03-05_200116_ujyggm.png",
     liveUrl: "#",
     repoUrl: "#",
     detailsUrl: "#",
@@ -86,7 +96,7 @@ const projects: Project[] = [
 
 export default function Portfolio() {
   return (
-    <div className="bg-zinc-950 py-16 md:py-24">
+    <div className="py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="relative mb-14 text-center">
@@ -98,7 +108,7 @@ export default function Portfolio() {
             Works
           </span>
 
-          <h2 className="relative text-3xl font-extrabold uppercase text-white sm:text-4xl">
+          <h2 className="relative text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold uppercase text-white">
             My <span className="text-[#FFB400]">Portfolio</span>
           </h2>
 

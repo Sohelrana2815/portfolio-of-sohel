@@ -3,19 +3,19 @@ import ContactForm from "./Contact/ContactForm";
 
 export default function Contact() {
   return (
-    <div className="bg-zinc-950 py-16 md:py-24">
+    <div className="py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="relative mb-14 text-center">
           {/* Background watermark */}
           <span
-            className="pointer-events-none absolute inset-0 flex select-none items-center justify-center text-6xl font-extrabold uppercase text-zinc-800/40 sm:text-7xl md:text-8xl"
+            className="pointer-events-none absolute inset-0 flex select-none items-center justify-center text-6xl font-extrabold uppercase text-zinc-800/10 sm:text-7xl md:text-9xl"
             aria-hidden="true"
           >
             Contact
           </span>
 
-          <h2 className="relative text-3xl font-extrabold uppercase text-white sm:text-4xl">
+          <h2 className="relative text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold uppercase text-foreground">
             Get In <span className="text-[#FFB400]">Touch</span>
           </h2>
 

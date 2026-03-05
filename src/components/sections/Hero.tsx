@@ -19,7 +19,7 @@ export default function Hero() {
           {/* Main Image Container */}
           <div className="relative h-60 w-60 xl:h-full xl:w-full rounded-full xl:rounded-3xl overflow-hidden shadow-2xl border-4 border-zinc-800">
             <Image
-              src="/profile2.jpeg"
+              src="/profile.jpg"
               alt="Sohel Rana"
               fill
               className="object-cover"
@@ -41,8 +41,8 @@ export default function Hero() {
           <p className="text-muted-foreground text-sm lg:text-base leading-relaxed max-w-lg text-[] mx-auto xl:mx-0 text-center xl:text-left">
             I&apos;m a Tunisian based web designer & front end developer focused
             on crafting clean & user-friendly experiences. I am passionate about
-            building excellent software that improves the lives of those around
-            me.
+            building excellent software that improves the lives of those
+            aroundSo now adjust my experience data. me.
           </p>
 
           <button className="group relative inline-flex items-center gap-4 w-fit xl:pl-7 xl:pr-18 pl-7 pr-16 py-4 border xl:border-2 border-[#FFB400] rounded-full overflow-hidden transition-all duration-300 cursor-pointer mx-auto xl:mx-0">
