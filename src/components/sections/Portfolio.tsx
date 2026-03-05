@@ -15,7 +15,7 @@ const projects: Project[] = [
     title: "Project Title",
     description: "Project based brief description/projection fix",
     image: "/projects/project-2.jpg",
-    liveUrl: "#",
+    liveUrl: "https://root-guide-frontend.vercel.app",
     repoUrl: "#",
     detailsUrl: "#",
   },

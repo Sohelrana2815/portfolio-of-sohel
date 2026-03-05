@@ -1,4 +1,4 @@
-import { blogItem } from "@/data/blog.data";
+import { blogItem } from "@/lib/data/blog.data";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";

@@ -4,7 +4,7 @@ import Resume from "./About/Resume";
 
 export default function About() {
   return (
-    <div className="bg-zinc-900 dark:bg-zinc-900 py-16 md:py-24">
+    <div className=" py-16 md:py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
         {/* Section Title */}
         <div className="relative text-center">
@@ -16,7 +16,7 @@ export default function About() {
             Resume
           </span>
 
-          <h2 className="relative text-3xl sm:text-4xl font-extrabold uppercase text-white dark:text-white">
+          <h2 className="relative text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold uppercase text-white dark:text-white">
             About <span className="text-[#FFB400]">Me</span>
           </h2>
         </div>
