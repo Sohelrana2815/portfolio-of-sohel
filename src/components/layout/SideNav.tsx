@@ -73,8 +73,10 @@ export default function SideNav() {
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`relative border p-3 rounded-full transition-all duration-300 bg-[#444444] cursor-pointer ${
-                isActive ? "bg-yellow-500 text-black scale-110" : "text-white"
+              className={`relative border p-3 rounded-full transition-all duration-300   cursor-pointer text-foreground ${
+                isActive
+                  ? "bg-yellow-500 scale-110"
+                  : "bg-[#EEEEEE] dark:bg-[#444444]"
               }`}
             >
               <Icon className="w-5 h-5" />
