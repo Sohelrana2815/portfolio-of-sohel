@@ -4,41 +4,41 @@
 // ------------------------------------------------------------------ //
 
 export type TechId =
-    | "nextjs"
-    | "react"
-    | "typescript"
-    | "tailwind"
-    | "mongodb"
-    | "nodejs"
-    | "express"
-    | "firebase"
-    | "redux"
-    | "stripe"
-    | "html"
-    | "css"
-    | "javascript";
+  | "nextjs"
+  | "react"
+  | "typescript"
+  | "tailwind"
+  | "mongodb"
+  | "nodejs"
+  | "express"
+  | "firebase"
+  | "redux"
+  | "stripe"
+  | "html"
+  | "css"
+  | "javascript";
 
 export interface TechItem {
-    id: TechId;
-    label: string;
-    color: string; // badge bg color
+  id: TechId;
+  label: string;
+  color: string; // badge bg color
 }
 
 /** Shared tech catalogue — keeps labels & colors in one place. */
 export const TECH_CATALOG: Record<TechId, TechItem> = {
-    nextjs: { id: "nextjs", label: "Next.js", color: "#000000" },
-    react: { id: "react", label: "React", color: "#61DAFB" },
-    typescript: { id: "typescript", label: "TypeScript", color: "#3178C6" },
-    tailwind: { id: "tailwind", label: "Tailwind CSS", color: "#06B6D4" },
-    mongodb: { id: "mongodb", label: "MongoDB", color: "#47A248" },
-    nodejs: { id: "nodejs", label: "Node.js", color: "#339933" },
-    express: { id: "express", label: "Express", color: "#444444" },
-    firebase: { id: "firebase", label: "Firebase", color: "#FFCA28" },
-    redux: { id: "redux", label: "Redux", color: "#764ABC" },
-    stripe: { id: "stripe", label: "Stripe", color: "#635BFF" },
-    html: { id: "html", label: "HTML5", color: "#E34F26" },
-    css: { id: "css", label: "CSS3", color: "#1572B6" },
-    javascript: { id: "javascript", label: "JavaScript", color: "#F7DF1E" },
+  nextjs: { id: "nextjs", label: "Next.js", color: "#000000" },
+  react: { id: "react", label: "React", color: "#61DAFB" },
+  typescript: { id: "typescript", label: "TypeScript", color: "#3178C6" },
+  tailwind: { id: "tailwind", label: "Tailwind CSS", color: "#06B6D4" },
+  mongodb: { id: "mongodb", label: "MongoDB", color: "#47A248" },
+  nodejs: { id: "nodejs", label: "Node.js", color: "#339933" },
+  express: { id: "express", label: "Express", color: "#444444" },
+  firebase: { id: "firebase", label: "Firebase", color: "#FFCA28" },
+  redux: { id: "redux", label: "Redux", color: "#764ABC" },
+  stripe: { id: "stripe", label: "Stripe", color: "#635BFF" },
+  html: { id: "html", label: "HTML5", color: "#E34F26" },
+  css: { id: "css", label: "CSS3", color: "#1572B6" },
+  javascript: { id: "javascript", label: "JavaScript", color: "#F7DF1E" },
 };
 
 // ------------------------------------------------------------------ //
@@ -46,17 +46,17 @@ export const TECH_CATALOG: Record<TechId, TechItem> = {
 // ------------------------------------------------------------------ //
 
 export interface Project {
-    id: number;
-    title: string;
-    slug: string;
-    description: string;
-    image: string;
-    liveUrl: string;
-    repoUrl: string;
-    techStack: TechId[];
-    role: string;
-    features: string[];
-    longDescription: string; // markdown
+  id: number;
+  title: string;
+  slug: string;
+  description: string;
+  image: string;
+  liveUrl: string;
+  repoUrl: string;
+  techStack: TechId[];
+  role: string;
+  features: string[];
+  longDescription: string; // markdown
 }
 
 // ------------------------------------------------------------------ //
@@ -64,26 +64,33 @@ export interface Project {
 // ------------------------------------------------------------------ //
 
 const projects: Project[] = [
-    {
-        id: 1,
-        title: "End-to-End Delivery Management System",
-        slug: "delivery-management-system",
-        description:
-            "A complete solution for businesses to manage logistics, from automated parcel booking to real-time tracking, designed to increase operational efficiency and customer trust.",
-        image:
-            "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763202/project2_fdq93a.webp",
-        liveUrl: "https://l2-b5-a6-courier-pro-api-frontend.vercel.app",
-        repoUrl: "https://github.com/Sohelrana2815/courier-pro-frontend",
-        techStack: ["nextjs", "typescript", "tailwind", "mongodb", "nodejs", "express"],
-        role: "Full-Stack Developer",
-        features: [
-            "Automated parcel booking with real-time status tracking",
-            "Role-based dashboards for admins, riders, and customers",
-            "Integrated payment gateway for COD and prepaid orders",
-            "Analytics dashboard with delivery performance metrics",
-            "Responsive design optimized for mobile field operations",
-        ],
-        longDescription: `## Project Overview
+  {
+    id: 1,
+    title: "End-to-End Delivery Management System",
+    slug: "delivery-management-system",
+    description:
+      "A complete solution for businesses to manage logistics, from automated parcel booking to real-time tracking, designed to increase operational efficiency and customer trust.",
+    image:
+      "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763202/project2_fdq93a.webp",
+    liveUrl: "https://l2-b5-a6-courier-pro-api-frontend.vercel.app",
+    repoUrl: "https://github.com/Sohelrana2815/courier-pro-frontend",
+    techStack: [
+      "nextjs",
+      "typescript",
+      "tailwind",
+      "mongodb",
+      "nodejs",
+      "express",
+    ],
+    role: "Full-Stack Developer",
+    features: [
+      "Automated parcel booking with real-time status tracking",
+      "Role-based dashboards for admins, riders, and customers",
+      "Integrated payment gateway for COD and prepaid orders",
+      "Analytics dashboard with delivery performance metrics",
+      "Responsive design optimized for mobile field operations",
+    ],
+    longDescription: `## Project Overview
 
 This delivery management platform was built to solve a critical pain point for local logistics businesses — managing parcels end-to-end without relying on expensive third-party software.
 
@@ -106,27 +113,27 @@ I designed and built a full-stack platform that covers the entire delivery lifec
 - **MongoDB** with optimized indexes for high-volume parcel queries
 - RESTful API built with **Express.js** and JWT-based authentication
 - Responsive UI with **Tailwind CSS** — works flawlessly on phones and desktops`,
-    },
-    {
-        id: 2,
-        title: "Smart Tour Booking & Guide Marketplace",
-        slug: "smart-tour-booking",
-        description:
-            "A comprehensive travel ecosystem connecting adventurous tourists with verified local guides. Features include secure automated payments, real-time booking management, and data-driven dashboards for service providers to track their growth.",
-        image:
-            "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763201/project1_luwbtm.webp",
-        liveUrl: "https://root-guide-frontend.vercel.app",
-        repoUrl: "https://github.com/Sohelrana2815/root-guide-frontend",
-        techStack: ["react", "tailwind", "mongodb", "nodejs", "express", "stripe"],
-        role: "Full-Stack Developer",
-        features: [
-            "Guide verification and profile management system",
-            "Secure Stripe-powered payment processing",
-            "Real-time booking calendar with availability management",
-            "Review and rating system for quality assurance",
-            "Admin dashboard with revenue analytics and user management",
-        ],
-        longDescription: `## Project Overview
+  },
+  {
+    id: 2,
+    title: "Smart Tour Booking & Guide Marketplace",
+    slug: "smart-tour-booking",
+    description:
+      "A comprehensive travel ecosystem connecting adventurous tourists with verified local guides. Features include secure automated payments, real-time booking management, and data-driven dashboards for service providers to track their growth.",
+    image:
+      "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763201/project1_luwbtm.webp",
+    liveUrl: "https://root-guide-frontend.vercel.app",
+    repoUrl: "https://github.com/Sohelrana2815/root-guide-frontend",
+    techStack: ["react", "tailwind", "mongodb", "nodejs", "express", "stripe"],
+    role: "Full-Stack Developer",
+    features: [
+      "Guide verification and profile management system",
+      "Secure Stripe-powered payment processing",
+      "Real-time booking calendar with availability management",
+      "Review and rating system for quality assurance",
+      "Admin dashboard with revenue analytics and user management",
+    ],
+    longDescription: `## Project Overview
 
 Root Guide connects tourists with verified local guides, creating a trusted marketplace for authentic travel experiences.
 
@@ -148,27 +155,34 @@ I built a two-sided marketplace that serves both tourists and guides:
 - **Stripe integration** for secure, PCI-compliant payment processing
 - **MongoDB** with aggregation pipelines for analytics dashboards
 - Role-based access control (Tourist / Guide / Admin) with JWT authentication`,
-    },
-    {
-        id: 3,
-        title: "Wholesale-to-Retail E-commerce Ecosystem",
-        slug: "ecommerce-ecosystem",
-        description:
-            "A robust digital storefront designed to transition traditional wholesale businesses into the global online market. This solution features a high-speed product discovery engine, integrated secure payment gateways, and a comprehensive back-office dashboard for real-time inventory tracking and sales analytics.",
-        image:
-            "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763202/project5_wywzm8.webp",
-        liveUrl: "https://glow-mart-bd.web.app/",
-        repoUrl: "https://github.com/Sohelrana2815/glow-mart-bd-client",
-        techStack: ["react", "tailwind", "firebase", "mongodb", "nodejs", "express"],
-        role: "Full-Stack Developer",
-        features: [
-            "Product catalog with advanced search and filter functionality",
-            "Shopping cart with persistent state management",
-            "Firebase authentication with social login options",
-            "Admin inventory management with real-time stock updates",
-            "Order processing pipeline with status tracking",
-        ],
-        longDescription: `## Project Overview
+  },
+  {
+    id: 3,
+    title: "Wholesale-to-Retail E-commerce Ecosystem",
+    slug: "ecommerce-ecosystem",
+    description:
+      "A robust digital storefront designed to transition traditional wholesale businesses into the global online market. This solution features a high-speed product discovery engine, integrated secure payment gateways, and a comprehensive back-office dashboard for real-time inventory tracking and sales analytics.",
+    image:
+      "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763202/project5_wywzm8.webp",
+    liveUrl: "https://glow-mart-bd.web.app/",
+    repoUrl: "https://github.com/Sohelrana2815/glow-mart-bd-client",
+    techStack: [
+      "react",
+      "tailwind",
+      "firebase",
+      "mongodb",
+      "nodejs",
+      "express",
+    ],
+    role: "Full-Stack Developer",
+    features: [
+      "Product catalog with advanced search and filter functionality",
+      "Shopping cart with persistent state management",
+      "Firebase authentication with social login options",
+      "Admin inventory management with real-time stock updates",
+      "Order processing pipeline with status tracking",
+    ],
+    longDescription: `## Project Overview
 
 GlowMart BD bridges the gap between traditional wholesale beauty businesses and the modern e-commerce landscape.
 
@@ -191,27 +205,34 @@ I created a complete e-commerce ecosystem with:
 - **Firebase** for authentication and real-time data synchronization
 - **MongoDB** backend with **Express.js** REST API
 - **Tailwind CSS** for a polished, responsive design across all devices`,
-    },
-    {
-        id: 4,
-        title: "Professional Freelance & Job Marketplace",
-        slug: "freelance-marketplace",
-        description:
-            "A dynamic ecosystem designed to bridge the gap between businesses and talent. It features a sophisticated bidding engine, secure offer management, and categorized job listings to ensure the right experts find the right projects efficiently.",
-        image:
-            "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763202/project4_h18djr.webp",
-        liveUrl: "https://easy-hire-e14d3.web.app/",
-        repoUrl: "https://github.com/Sohelrana2815/easy-hire-front-end",
-        techStack: ["react", "tailwind", "firebase", "mongodb", "nodejs", "express"],
-        role: "Full-Stack Developer",
-        features: [
-            "Job posting with category-based organization",
-            "Bidding system for freelancers to submit proposals",
-            "Secure offer management and acceptance workflow",
-            "User profiles with portfolio and skill showcase",
-            "Real-time notifications for bid updates and messages",
-        ],
-        longDescription: `## Project Overview
+  },
+  {
+    id: 4,
+    title: "Professional Freelance & Job Marketplace",
+    slug: "freelance-marketplace",
+    description:
+      "A dynamic ecosystem designed to bridge the gap between businesses and talent. It features a sophisticated bidding engine, secure offer management, and categorized job listings to ensure the right experts find the right projects efficiently.",
+    image:
+      "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763202/project4_h18djr.webp",
+    liveUrl: "https://easy-hire-e14d3.web.app/",
+    repoUrl: "https://github.com/Sohelrana2815/easy-hire-front-end",
+    techStack: [
+      "react",
+      "tailwind",
+      "firebase",
+      "mongodb",
+      "nodejs",
+      "express",
+    ],
+    role: "Full-Stack Developer",
+    features: [
+      "Job posting with category-based organization",
+      "Bidding system for freelancers to submit proposals",
+      "Secure offer management and acceptance workflow",
+      "User profiles with portfolio and skill showcase",
+      "Real-time notifications for bid updates and messages",
+    ],
+    longDescription: `## Project Overview
 
 EasyHire is a freelance marketplace that connects businesses with skilled professionals through a structured bidding process.
 
@@ -231,27 +252,34 @@ Small businesses struggle to find affordable, quality freelancers. Existing plat
 - **Firebase** authentication with email and Google sign-in
 - **MongoDB** with optimized queries for fast job search and filtering
 - RESTful API architecture with **Express.js** and proper error handling`,
-    },
-    {
-        id: 5,
-        title: "Premium Digital Media & Subscription Platform",
-        slug: "digital-media-platform",
-        description:
-            "A high-traffic news aggregation portal featuring a sophisticated monetization engine. It includes automated subscription management, AI-driven trending content algorithms (based on user engagement), and a data-driven admin suite for content moderation and real-time audience insights.",
-        image:
-            "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763202/project3_sdp58y.webp",
-        liveUrl: "https://daily-lens-90dd8.web.app/",
-        repoUrl: "https://github.com/Sohelrana2815/daily-lens-front-end",
-        techStack: ["react", "tailwind", "firebase", "mongodb", "nodejs", "express"],
-        role: "Full-Stack Developer",
-        features: [
-            "Article publishing with rich text editor",
-            "Subscription-based premium content access",
-            "Trending articles algorithm based on engagement metrics",
-            "Admin dashboard for content moderation and analytics",
-            "Responsive reading experience optimized for all devices",
-        ],
-        longDescription: `## Project Overview
+  },
+  {
+    id: 5,
+    title: "Premium Digital Media & Subscription Platform",
+    slug: "digital-media-platform",
+    description:
+      "A high-traffic news aggregation portal featuring a sophisticated monetization engine. It includes automated subscription management, AI-driven trending content algorithms (based on user engagement), and a data-driven admin suite for content moderation and real-time audience insights.",
+    image:
+      "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772775068/project3_tyqbyr.webp",
+    liveUrl: "https://daily-lens-90dd8.web.app/",
+    repoUrl: "https://github.com/Sohelrana2815/daily-lens-front-end",
+    techStack: [
+      "react",
+      "tailwind",
+      "firebase",
+      "mongodb",
+      "nodejs",
+      "express",
+    ],
+    role: "Full-Stack Developer",
+    features: [
+      "Article publishing with rich text editor",
+      "Subscription-based premium content access",
+      "Trending articles algorithm based on engagement metrics",
+      "Admin dashboard for content moderation and analytics",
+      "Responsive reading experience optimized for all devices",
+    ],
+    longDescription: `## Project Overview
 
 Daily Lens is a premium news platform that combines free and subscription content with data-driven content curation.
 
@@ -272,27 +300,34 @@ Independent news publishers need a way to monetize quality content while maintai
 - **Firebase** for user authentication and subscription state management
 - **MongoDB** aggregation pipelines for trending content calculations
 - Responsive typography and reading experience with **Tailwind CSS**`,
-    },
-    {
-        id: 6,
-        title: "Interactive Learning Management & Grading System",
-        slug: "learning-management-system",
-        description:
-            "A comprehensive educational ecosystem designed for seamless academic workflow. It features a dual-interface dashboard for students and educators, supporting real-time assignment tracking, automated grading triggers, and a structured feedback loop to enhance remote learning efficiency.",
-        image:
-            "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763202/project6_zxkjhu.webp",
-        liveUrl: "https://stydy-flow.web.app/",
-        repoUrl: "https://github.com/Sohelrana2815/study-flow-client",
-        techStack: ["react", "tailwind", "firebase", "mongodb", "nodejs", "express"],
-        role: "Full-Stack Developer",
-        features: [
-            "Dual dashboards for students and educators",
-            "Assignment creation, submission, and tracking system",
-            "Automated grading with instructor feedback loop",
-            "Course enrollment and progress monitoring",
-            "Real-time notifications for deadlines and grade updates",
-        ],
-        longDescription: `## Project Overview
+  },
+  {
+    id: 6,
+    title: "Interactive Learning Management & Grading System",
+    slug: "learning-management-system",
+    description:
+      "A comprehensive educational ecosystem designed for seamless academic workflow. It features a dual-interface dashboard for students and educators, supporting real-time assignment tracking, automated grading triggers, and a structured feedback loop to enhance remote learning efficiency.",
+    image:
+      "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763202/project6_zxkjhu.webp",
+    liveUrl: "https://stydy-flow.web.app/",
+    repoUrl: "https://github.com/Sohelrana2815/study-flow-client",
+    techStack: [
+      "react",
+      "tailwind",
+      "firebase",
+      "mongodb",
+      "nodejs",
+      "express",
+    ],
+    role: "Full-Stack Developer",
+    features: [
+      "Dual dashboards for students and educators",
+      "Assignment creation, submission, and tracking system",
+      "Automated grading with instructor feedback loop",
+      "Course enrollment and progress monitoring",
+      "Real-time notifications for deadlines and grade updates",
+    ],
+    longDescription: `## Project Overview
 
 StudyFlow is a learning management system that streamlines academic workflows for both students and educators.
 
@@ -312,27 +347,27 @@ Remote learning requires a centralized platform where educators can distribute a
 - **Firebase** authentication with protected route middleware
 - **MongoDB** for flexible document storage of assignments and submissions
 - Fully responsive with **Tailwind CSS** for mobile and desktop learning`,
-    },
-    {
-        id: 7,
-        title: "Culinary Resource & Kitchen Workflow Tracker",
-        slug: "culinary-workflow-tracker",
-        description:
-            "A high-performance interface designed for kitchen operations. This solution utilizes a dynamic state-management system to track ingredients, prep times, and nutritional data in real-time, helping chefs organize workflows from Planned to In-Progress with zero friction.",
-        image:
-            "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763202/project9_cyeqdq.webp",
-        liveUrl: "https://present-jam.surge.sh/",
-        repoUrl: "https://github.com/Sohelrana2815/food-corner",
-        techStack: ["react", "javascript", "css", "firebase"],
-        role: "Frontend Developer",
-        features: [
-            "Recipe catalog with ingredient lists and prep times",
-            "Kitchen workflow board (Planned → In-Progress → Done)",
-            "Nutritional data display per recipe",
-            "Dynamic state management for real-time updates",
-            "Clean, distraction-free cooking interface",
-        ],
-        longDescription: `## Project Overview
+  },
+  {
+    id: 7,
+    title: "Culinary Resource & Kitchen Workflow Tracker",
+    slug: "culinary-workflow-tracker",
+    description:
+      "A high-performance interface designed for kitchen operations. This solution utilizes a dynamic state-management system to track ingredients, prep times, and nutritional data in real-time, helping chefs organize workflows from Planned to In-Progress with zero friction.",
+    image:
+      "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763202/project9_cyeqdq.webp",
+    liveUrl: "https://present-jam.surge.sh/",
+    repoUrl: "https://github.com/Sohelrana2815/food-corner",
+    techStack: ["react", "javascript", "css", "firebase"],
+    role: "Frontend Developer",
+    features: [
+      "Recipe catalog with ingredient lists and prep times",
+      "Kitchen workflow board (Planned → In-Progress → Done)",
+      "Nutritional data display per recipe",
+      "Dynamic state management for real-time updates",
+      "Clean, distraction-free cooking interface",
+    ],
+    longDescription: `## Project Overview
 
 Food Corner is a kitchen workflow organizer that helps chefs and home cooks manage recipes and cooking tasks efficiently.
 
@@ -352,27 +387,27 @@ Home cooks and small kitchen teams often lose track of prep steps when managing 
 - **Firebase** for authentication and data persistence
 - Custom **CSS** styling for a clean, focused cooking interface
 - Responsive design for tablet use in kitchen environments`,
-    },
-    {
-        id: 8,
-        title: "Global Destination Discovery & Tourism CMS",
-        slug: "destination-discovery-cms",
-        description:
-            "A scalable travel directory and content management system for regional tourism boards. The platform enables automated submission of new locations, categorized destination filtering, and immersive detail pages designed to drive user engagement and travel bookings across North and South America.",
-        image:
-            "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763203/project8_uaagw8.webp",
-        liveUrl: "https://wonders-of-america.web.app/",
-        repoUrl: "https://github.com/Sohelrana2815/wonders-of-america",
-        techStack: ["react", "tailwind", "firebase", "mongodb", "nodejs"],
-        role: "Full-Stack Developer",
-        features: [
-            "Destination catalog with country and category filtering",
-            "Community-driven location submissions with admin approval",
-            "Immersive destination detail pages with image galleries",
-            "Visitor engagement tracking and popular destination ranking",
-            "Responsive design for mobile travel planning",
-        ],
-        longDescription: `## Project Overview
+  },
+  {
+    id: 8,
+    title: "Global Destination Discovery & Tourism CMS",
+    slug: "destination-discovery-cms",
+    description:
+      "A scalable travel directory and content management system for regional tourism boards. The platform enables automated submission of new locations, categorized destination filtering, and immersive detail pages designed to drive user engagement and travel bookings across North and South America.",
+    image:
+      "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763203/project8_uaagw8.webp",
+    liveUrl: "https://wonders-of-america.web.app/",
+    repoUrl: "https://github.com/Sohelrana2815/wonders-of-america",
+    techStack: ["react", "tailwind", "firebase", "mongodb", "nodejs"],
+    role: "Full-Stack Developer",
+    features: [
+      "Destination catalog with country and category filtering",
+      "Community-driven location submissions with admin approval",
+      "Immersive destination detail pages with image galleries",
+      "Visitor engagement tracking and popular destination ranking",
+      "Responsive design for mobile travel planning",
+    ],
+    longDescription: `## Project Overview
 
 Wonders of America is a travel discovery platform that showcases destinations across North and South America with community-driven content.
 
@@ -392,27 +427,27 @@ Tourism boards needed a modern, scalable platform to showcase regional destinati
 - **Firebase** for user authentication and community features
 - **MongoDB** with **Node.js** backend for content management
 - **Tailwind CSS** for immersive, responsive destination pages`,
-    },
-    {
-        id: 9,
-        title: "Public Sector Asset & Government Property Portal",
-        slug: "government-property-portal",
-        description:
-            "A secure, high-integrity real estate platform specifically engineered for government and public sector assets. It features a strict authentication-guarded detail system, social identity integration, and a sophisticated search architecture for managing high-value civic infrastructure and community centers.",
-        image:
-            "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763203/project7_kndxh9.webp",
-        liveUrl: "https://gov-real-estate.web.app/",
-        repoUrl: "https://github.com/Sohelrana2815/Gov-Real-Estate",
-        techStack: ["react", "css", "firebase", "javascript"],
-        role: "Frontend Developer",
-        features: [
-            "Property listings with advanced search and filtering",
-            "Authentication-guarded property detail pages",
-            "Social identity integration (Google, GitHub login)",
-            "Government property categorization system",
-            "Responsive design for field inspections on mobile",
-        ],
-        longDescription: `## Project Overview
+  },
+  {
+    id: 9,
+    title: "Public Sector Asset & Government Property Portal",
+    slug: "government-property-portal",
+    description:
+      "A secure, high-integrity real estate platform specifically engineered for government and public sector assets. It features a strict authentication-guarded detail system, social identity integration, and a sophisticated search architecture for managing high-value civic infrastructure and community centers.",
+    image:
+      "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763203/project7_kndxh9.webp",
+    liveUrl: "https://gov-real-estate.web.app/",
+    repoUrl: "https://github.com/Sohelrana2815/Gov-Real-Estate",
+    techStack: ["react", "css", "firebase", "javascript"],
+    role: "Frontend Developer",
+    features: [
+      "Property listings with advanced search and filtering",
+      "Authentication-guarded property detail pages",
+      "Social identity integration (Google, GitHub login)",
+      "Government property categorization system",
+      "Responsive design for field inspections on mobile",
+    ],
+    longDescription: `## Project Overview
 
 Gov Real Estate is a secure property management portal designed for government and public sector organizations to manage civic infrastructure assets.
 
@@ -432,7 +467,7 @@ Government agencies need a secure, auditable platform to catalog and manage publ
 - **Firebase** for secure authentication with multiple social providers
 - Custom **CSS** for a professional, government-appropriate visual style
 - Responsive design for field inspections on tablets and mobile devices`,
-    },
+  },
 ];
 
 export { projects };
