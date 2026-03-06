@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Download } from "lucide-react";
+import { Download } from "lucide-react";
 import { personalInfo, stats } from "@/lib/data/aboutData";
 import type { StatItem } from "@/types/about";
 

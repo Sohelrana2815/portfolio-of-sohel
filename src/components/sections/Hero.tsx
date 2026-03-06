@@ -23,7 +23,7 @@ export default function Hero() {
               alt="Sohel Rana"
               fill
               className="object-cover"
-              style={{ objectPosition: 'center 15%' }}
+              style={{ objectPosition: "center 15%" }}
               priority
             />
           </div>
@@ -39,11 +39,10 @@ export default function Hero() {
             </h1>
           </div>
 
-          <p className="text-muted-foreground text-sm lg:text-base leading-relaxed max-w-lg text-[] mx-auto xl:mx-0 text-center xl:text-left">
-            I&apos;m a Tunisian based web designer & front end developer focused
-            on crafting clean & user-friendly experiences. I am passionate about
-            building excellent software that improves the lives of those
-            aroundSo now adjust my experience data. me.
+          <p className="text-[#D3D3D3] text-base xl:text-lg leading-relaxed max-w-lg mx-auto xl:mx-0 text-center xl:text-left">
+            I help professionals build a powerful online presence with modern
+            portfolio websites that increase trust, authority, and client
+            opportunities.
           </p>
 
           <button className="group relative inline-flex items-center gap-4 w-fit xl:pl-7 xl:pr-18 pl-7 pr-16 py-4 border xl:border-2 border-[#FFB400] rounded-full overflow-hidden transition-all duration-300 cursor-pointer mx-auto xl:mx-0">
