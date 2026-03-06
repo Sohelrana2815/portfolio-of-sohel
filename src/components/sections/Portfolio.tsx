@@ -9,7 +9,7 @@ const projects: Project[] = [
     image:
       "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763202/project2_fdq93a.webp",
     liveUrl: "https://l2-b5-a6-courier-pro-api-frontend.vercel.app",
-    repoUrl: "#",
+    repoUrl: "https://github.com/Sohelrana2815/courier-pro-frontend",
     detailsUrl: "#",
   },
   {
@@ -20,7 +20,7 @@ const projects: Project[] = [
     image:
       "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763201/project1_luwbtm.webp",
     liveUrl: "https://root-guide-frontend.vercel.app",
-    repoUrl: "#",
+    repoUrl: "https://github.com/Sohelrana2815/root-guide-frontend",
     detailsUrl: "#",
   },
 
@@ -32,7 +32,7 @@ const projects: Project[] = [
     image:
       "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763202/project5_wywzm8.webp",
     liveUrl: "https://glow-mart-bd.web.app/",
-    repoUrl: "#",
+    repoUrl: "https://github.com/Sohelrana2815/glow-mart-bd-client",
     detailsUrl: "#",
   },
   {
@@ -42,8 +42,8 @@ const projects: Project[] = [
       "A dynamic ecosystem designed to bridge the gap between businesses and talent. It features a sophisticated bidding engine, secure offer management, and categorized job listings to ensure the right experts find the right projects efficiently.",
     image:
       "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763202/project4_h18djr.webp",
-    liveUrl: "#",
-    repoUrl: "#",
+    liveUrl: "https://easy-hire-e14d3.web.app/",
+    repoUrl: "https://github.com/Sohelrana2815/easy-hire-front-end",
     detailsUrl: "#",
   },
   {
@@ -53,8 +53,8 @@ const projects: Project[] = [
       "A high-traffic news aggregation portal featuring a sophisticated monetization engine. It includes automated subscription management, AI-driven trending content algorithms (based on user engagement), and a data-driven admin suite for content moderation and real-time audience insights.",
     image:
       "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763202/project3_sdp58y.webp",
-    liveUrl: "#",
-    repoUrl: "#",
+    liveUrl: "https://daily-lens-90dd8.web.app/",
+    repoUrl: "https://github.com/Sohelrana2815/daily-lens-front-end",
     detailsUrl: "#",
   },
   {
@@ -64,8 +64,8 @@ const projects: Project[] = [
       "A comprehensive educational ecosystem designed for seamless academic workflow. It features a dual-interface dashboard for students and educators, supporting real-time assignment tracking, automated grading triggers, and a structured feedback loop to enhance remote learning efficiency.",
     image:
       "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763202/project6_zxkjhu.webp",
-    liveUrl: "#",
-    repoUrl: "#",
+    liveUrl: "https://stydy-flow.web.app/",
+    repoUrl: "https://github.com/Sohelrana2815/study-flow-client",
     detailsUrl: "#",
   },
   {
@@ -75,8 +75,8 @@ const projects: Project[] = [
       "A high-performance interface designed for kitchen operations. This solution utilizes a dynamic state-management system to track ingredients, prep times, and nutritional data in real-time, helping chefs organize workflows from Planned to In-Progress with zero friction.",
     image:
       "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763202/project9_cyeqdq.webp",
-    liveUrl: "#",
-    repoUrl: "#",
+    liveUrl: "https://present-jam.surge.sh/",
+    repoUrl: "https://github.com/Sohelrana2815/food-corner",
     detailsUrl: "#",
   },
   {
@@ -86,8 +86,8 @@ const projects: Project[] = [
       "A scalable travel directory and content management system for regional tourism boards. The platform enables automated submission of new locations, categorized destination filtering, and immersive detail pages designed to drive user engagement and travel bookings across North and South America.",
     image:
       "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763203/project8_uaagw8.webp",
-    liveUrl: "#",
-    repoUrl: "#",
+    liveUrl: "https://wonders-of-america.web.app/",
+    repoUrl: "https://github.com/Sohelrana2815/wonders-of-america",
     detailsUrl: "#",
   },
   {
@@ -97,8 +97,8 @@ const projects: Project[] = [
       "A secure, high-integrity real estate platform specifically engineered for government and public sector assets. It features a strict authentication-guarded detail system, social identity integration, and a sophisticated search architecture for managing high-value civic infrastructure and community centers.",
     image:
       "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763203/project7_kndxh9.webp",
-    liveUrl: "#",
-    repoUrl: "#",
+    liveUrl: "https://gov-real-estate.web.app/",
+    repoUrl: "https://github.com/Sohelrana2815/Gov-Real-Estate",
     detailsUrl: "#",
   },
 ];
