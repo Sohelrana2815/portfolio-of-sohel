@@ -91,12 +91,15 @@ export default function InfoStats() {
         <button className="group relative inline-flex items-center gap-4 w-fit xl:pl-7 xl:pr-18 pl-7 pr-16 py-4 border xl:border-2 border-[#FFB400] rounded-full overflow-hidden transition-all duration-300 cursor-pointer mx-auto xl:mx-0">
           {/* 1) The filling layer — scales from right -> left */}
           <span
-            className="absolute inset-0 z-0 rounded-full origin-right transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"
+            className="absolute inset-0 z-0 rounded-full origin-right transform scale-x-0   group-hover:scale-x-100
+  group-active:scale-x-100
+  active:scale-x-100
+  transition-transform  ease-out"
             style={{ backgroundColor: "oklch(79.5% 0.184 86.047)" }} // bg-yellow-500
           />
 
           {/* 2) The label (above the filler) */}
-          <span className="relative z-10 font-bold uppercase tracking-wide text-foreground group-hover:text-black transition-colors text-sm xl:text-base">
+          <span className="relative z-10 font-bold uppercase tracking-wide text-foreground group-hover:text-black transition-colors text-sm xl:text-base ">
             Download CV
           </span>
 
