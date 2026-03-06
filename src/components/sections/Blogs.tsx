@@ -1,6 +1,7 @@
 import { blogItem } from "@/lib/data/blog.data";
+import FallbackImage from "@/components/ui/FallbackImage";
 import Link from "next/link";
-import Image from "next/image";
+
 
 export default function Blogs() {
   return (
@@ -23,58 +24,64 @@ export default function Blogs() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {blogItem.map(({ id, title, description, image, date, url }) => (
-            <div
-              key={id}
-              className="bg-[#1e1e1e] rounded-lg overflow-hidden flex flex-col group transition-transform duration-300 hover:-translate-y-2 border border-zinc-800"
-            >
-              {/* Image Header */}
-              <div className="relative h-64 w-full overflow-hidden">
-                <Image
-                  src={image}
-                  alt={title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
+          {blogItem.map(
+            ({ id, title, description, image, date, url, readTime }) => (
+              <div
+                key={id}
+                className="bg-[#1e1e1e] rounded-lg overflow-hidden flex flex-col group transition-transform duration-300 hover:-translate-y-2 border border-zinc-800"
+              >
+                {/* Image Header */}
+                <div className="relative h-64 w-full overflow-hidden">
+                  <FallbackImage
+                    src={image}
+                    alt={title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
 
-              {/* Accent Bar */}
-              <div className="h-1 w-full bg-yellow-500"></div>
+                {/* Accent Bar */}
+                <div className="h-1 w-full bg-yellow-500"></div>
 
-              {/* Content */}
-              <div className="p-6 flex flex-col flex-grow">
-                <span className="text-zinc-500 text-sm mb-2">{date}</span>
-                <h3 className="text-xl font-bold mb-4 line-clamp-2 text-yellow-500/90 group-hover:text-yellow-500 transition-colors">
-                  {title}
-                </h3>
-                <p className="text-zinc-400 text-sm mb-6 line-clamp-3 leading-relaxed">
-                  {description}
-                </p>
-                <div className="mt-auto">
-                  <Link
-                    href={url}
-                    className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-white hover:text-yellow-500 transition-colors"
-                  >
-                    Read more
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
+                {/* Content */}
+                <div className="p-6 flex flex-col grow">
+                  <div className="flex items-center gap-3 text-zinc-500 text-sm mb-3">
+                    <span>{date}</span>
+                    <span className="w-1 h-1 bg-yellow-500 rounded-full" />
+                    <span>{readTime}</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 line-clamp-2 text-yellow-500/90 group-hover:text-yellow-500 transition-colors">
+                    {title}
+                  </h3>
+                  <p className="text-zinc-400 text-sm mb-6 line-clamp-3 leading-relaxed">
+                    {description}
+                  </p>
+                  <div className="mt-auto">
+                    <Link
+                      href={url}
+                      className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-white hover:text-yellow-500 transition-colors"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                  </Link>
+                      Read more
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        />
+                      </svg>
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            )
+          )}
         </div>
       </div>
     </section>

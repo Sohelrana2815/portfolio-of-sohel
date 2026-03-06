@@ -2,17 +2,11 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ExternalLink, Github, Eye } from "lucide-react";
+import type { Project } from "@/lib/data/projects.data";
 
-export interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  liveUrl: string;
-  repoUrl: string;
-  detailsUrl: string;
-}
+const FALLBACK_IMAGE = "/project1.webp";
 
 export default function ProjectCard({ project }: { project: Project }) {
   const [isActive, setIsActive] = useState(false);
@@ -51,6 +45,9 @@ export default function ProjectCard({ project }: { project: Project }) {
           fill
           className={`object-cover transition-transform duration-500 
             ${isActive ? "scale-110" : "group-hover:scale-110"}`}
+          onError={(e) => {
+            (e.target as HTMLImageElement).src = FALLBACK_IMAGE;
+          }}
         />
       </div>
 
@@ -64,7 +61,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         </p>
       </div>
 
-      {/* 3. NEW OVERLAY POSITION: Direct child of the main container */}
+      {/* 3. Overlay with action buttons */}
       <div
         className={`absolute inset-0 flex flex-col items-center justify-center gap-4
           bg-black/70 backdrop-blur-sm transition-opacity duration-300 z-20
@@ -92,14 +89,14 @@ export default function ProjectCard({ project }: { project: Project }) {
             <Github size={20} />
           </a>
 
-          <a
-            href={project.detailsUrl}
+          <Link
+            href={`/project/${project.slug}`}
             onClick={(e) => e.stopPropagation()}
             className="px-5 py-2.5 flex items-center gap-2 border border-white/30 rounded-full text-xs font-bold uppercase text-white hover:border-[#FFB400]"
           >
             <Eye size={20} />
             DETAILS
-          </a>
+          </Link>
         </div>
       </div>
     </div>

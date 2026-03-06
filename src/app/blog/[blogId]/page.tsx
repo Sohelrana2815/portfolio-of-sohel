@@ -1,7 +1,48 @@
 import { blogItem } from "@/lib/data/blog.data";
 import { notFound } from "next/navigation";
-import Image from "next/image";
+import FallbackImage from "@/components/ui/FallbackImage";
 import Link from "next/link";
+import MarkdownRenderer from "@/components/ui/MarkdownRenderer";
+import type { Metadata } from "next";
+
+/* ------------------------------------------------------------------ */
+/*  SSG — pre-render every blog post at build time                     */
+/* ------------------------------------------------------------------ */
+
+export function generateStaticParams() {
+  return blogItem.map((item) => ({ blogId: item.slug }));
+}
+
+/* ------------------------------------------------------------------ */
+/*  SEO — per-post metadata                                            */
+/* ------------------------------------------------------------------ */
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ blogId: string }>;
+}): Promise<Metadata> {
+  const { blogId } = await params;
+  const blog = blogItem.find((item) => item.slug === blogId);
+
+  if (!blog) return { title: "Blog not found" };
+
+  return {
+    title: `${blog.title} | Sohel Rana`,
+    description: blog.metaDescription,
+    keywords: blog.keywords,
+    openGraph: {
+      title: blog.title,
+      description: blog.metaDescription,
+      type: "article",
+      publishedTime: blog.date,
+    },
+  };
+}
+
+/* ------------------------------------------------------------------ */
+/*  Page component                                                     */
+/* ------------------------------------------------------------------ */
 
 export default async function BlogPage({
   params,
@@ -9,17 +50,17 @@ export default async function BlogPage({
   params: Promise<{ blogId: string }>;
 }) {
   const { blogId } = await params;
-  const blog = blogItem.find((item) => item.id === parseInt(blogId));
+  const blog = blogItem.find((item) => item.slug === blogId);
 
   if (!blog) {
     notFound();
   }
 
-  const { title, description, image, date } = blog;
+  const { title, description, image, date, readTime, keywords, content } = blog;
 
   return (
     <div className="min-h-screen bg-[#121212] text-white py-20 px-4 md:px-0">
-      <article className="max-w-4xl mx-auto">
+      <article className="max-w-3xl mx-auto">
         {/* Navigation */}
         <div className="mb-12">
           <Link
@@ -46,19 +87,24 @@ export default async function BlogPage({
 
         {/* Header */}
         <header className="mb-12">
-          <div className="flex items-center gap-4 text-zinc-500 text-sm mb-6 uppercase tracking-widest font-medium">
+          <div className="flex flex-wrap items-center gap-4 text-zinc-500 text-sm mb-6 uppercase tracking-widest font-medium">
             <span>{date}</span>
-            <span className="w-1 h-1 bg-yellow-500 rounded-full"></span>
+            <span className="w-1 h-1 bg-yellow-500 rounded-full" />
+            <span>{readTime}</span>
+            <span className="w-1 h-1 bg-yellow-500 rounded-full" />
             <span>Article</span>
           </div>
-          <h1 className="text-4xl md:text-6xl font-black mb-8 leading-tight tracking-tight text-yellow-500/90">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight tracking-tight text-yellow-500/90">
             {title}
           </h1>
+          <p className="text-lg md:text-xl text-zinc-400 leading-relaxed border-l-4 border-yellow-500 pl-5 py-1 italic">
+            {description}
+          </p>
         </header>
 
         {/* Featured Image */}
-        <div className="relative h-[400px] md:h-[600px] w-full rounded-2xl overflow-hidden mb-16 border border-zinc-800 shadow-2xl">
-          <Image
+        <div className="relative h-[280px] sm:h-[360px] md:h-[480px] w-full rounded-2xl overflow-hidden mb-16 border border-zinc-800 shadow-2xl">
+          <FallbackImage
             src={image}
             alt={title}
             fill
@@ -67,35 +113,25 @@ export default async function BlogPage({
           />
         </div>
 
-        {/* Content */}
-        <div className="prose prose-invert prose-yellow max-w-none">
-          <p className="text-xl md:text-2xl text-zinc-300 leading-relaxed font-light mb-8 italic border-l-4 border-yellow-500 pl-6 py-2">
-            {description}
-          </p>
-          <div className="text-zinc-400 leading-loose space-y-6 text-lg">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <p>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-              cupidatat non proident, sunt in culpa qui officia deserunt mollit
-              anim id est laborum.
-            </p>
-            <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo.
-            </p>
-          </div>
+        {/* Markdown Content */}
+        <div className="mb-16">
+          <MarkdownRenderer content={content} />
+        </div>
+
+        {/* Keywords / Tags */}
+        <div className="flex flex-wrap gap-2 mb-16">
+          {keywords.map((kw) => (
+            <span
+              key={kw}
+              className="px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full border border-yellow-500/30 text-yellow-500/80 bg-yellow-500/5"
+            >
+              {kw}
+            </span>
+          ))}
         </div>
 
         {/* Footer */}
-        <footer className="mt-20 pt-10 border-t border-zinc-800 flex items-center justify-between">
+        <footer className="pt-10 border-t border-zinc-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center font-bold text-black text-xl">
               S
@@ -107,17 +143,27 @@ export default async function BlogPage({
               </div>
             </div>
           </div>
-          <div className="flex gap-4">
-            {/* Social Share Placeholders */}
-            {[1, 2, 3].map((i) => (
-              <div
-                key={i}
-                className="w-10 h-10 rounded-full border border-zinc-800 flex items-center justify-center hover:bg-zinc-800 cursor-pointer transition-colors"
-              >
-                <div className="w-4 h-4 bg-zinc-600 rounded-sm"></div>
-              </div>
-            ))}
-          </div>
+
+          {/* CTA */}
+          <Link
+            href="/#contact"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-yellow-500 text-black text-sm font-bold uppercase tracking-wider rounded-full hover:bg-yellow-400 transition-colors"
+          >
+            Let&apos;s Work Together
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
+          </Link>
         </footer>
       </article>
     </div>
