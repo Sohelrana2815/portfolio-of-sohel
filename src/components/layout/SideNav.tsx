@@ -1,7 +1,7 @@
 "use client";
 
+import { useNav } from "@/context/NavContext";
 import { Home, User, FolderKanban, Rss } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
 
 const navItems = [
   { id: "home", icon: Home, label: "Home" },
@@ -12,55 +12,7 @@ const navItems = [
 ];
 
 export default function SideNav() {
-  const [activeSection, setActiveSection] = useState("home");
-  const isScrollingRef = useRef(false);
-
-  useEffect(() => {
-    const observers: IntersectionObserver[] = [];
-
-    const handleIntersect = (entries: IntersectionObserverEntry[]) => {
-      // If we are currently executing a smooth scroll from a click, ignore observer updates
-      if (isScrollingRef.current) return;
-
-      entries.forEach((entry) => {
-        // threshold: 0.5 means when 50% of the section is visible
-        if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
-          setActiveSection(entry.target.id);
-        }
-      });
-    };
-
-    const observerOptions = {
-      root: null, // Use the viewport
-      rootMargin: "0px",
-      threshold: 0.6, // Adjust this: 0.6 means 60% of the section must be visible
-    };
-
-    const observer = new IntersectionObserver(handleIntersect, observerOptions);
-
-    navItems.forEach((item) => {
-      const el = document.getElementById(item.id);
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (!element) return;
-
-    // Set ref to true to temporarily disable observer while jumping to section
-    isScrollingRef.current = true;
-    setActiveSection(sectionId);
-
-    element.scrollIntoView({ behavior: "smooth" });
-
-    // Reset the ref after the scroll animation roughly finishes
-    setTimeout(() => {
-      isScrollingRef.current = false;
-    }, 800);
-  };
+  const { activeSection, scrollToSection } = useNav(); // Same context!
 
   return (
     <>

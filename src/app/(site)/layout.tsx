@@ -1,6 +1,7 @@
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import SideNav from "@/components/layout/SideNav";
+import { NavProvider } from "@/context/NavContext";
 
 export default function SiteLayout({
   children,
@@ -15,12 +16,12 @@ export default function SiteLayout({
       </header>
 
       {/* CENTER RIGHT: Side Navigation Icons */}
-      <SideNav />
+      <NavProvider>
+        <SideNav />
 
-      {/* MAIN CONTENT (Scrollable) */}
-      <main className="pb-20 xl:pb-0">
-        {children}
-      </main>
+        {/* MAIN CONTENT (Scrollable) */}
+        <main className="pb-20 xl:pb-0">{children}</main>
+      </NavProvider>
 
       <Footer />
     </div>

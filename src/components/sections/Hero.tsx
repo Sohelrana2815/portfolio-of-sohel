@@ -1,8 +1,11 @@
+"use client"
+import { useNav } from "@/context/NavContext";
 import { ArrowRight } from "lucide-react"; // Assuming you use lucide-react
 // import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Hero() {
+  const { scrollToSection } = useNav(); // Access the shared logic
   return (
     <section className="relative min-h-screen flex items-center justify-center py-10 overflow-hidden">
       {/* --- NEW DYNAMIC YELLOW BACKGROUND --- */}
@@ -46,7 +49,10 @@ export default function Hero() {
             opportunities.
           </p>
 
-          <button className="group relative inline-flex items-center gap-4 w-fit xl:pl-7 xl:pr-18 pl-7 pr-16 py-4 border xl:border-2 border-[#FFB400] rounded-full overflow-hidden transition-all duration-300 cursor-pointer mx-auto xl:mx-0">
+          <button
+            onClick={() => scrollToSection("about")}
+            className="group relative inline-flex items-center gap-4 w-fit xl:pl-7 xl:pr-18 pl-7 pr-16 py-4 border xl:border-2 border-[#FFB400] rounded-full overflow-hidden transition-all duration-300 cursor-pointer mx-auto xl:mx-0"
+          >
             {/* 1) The filling layer — scales from right -> left */}
             <span
               className="absolute inset-0 z-0 rounded-full origin-right transform scale-x-0
