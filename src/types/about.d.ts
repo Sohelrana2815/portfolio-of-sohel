@@ -5,9 +5,9 @@ export interface PersonalInfo {
   nationality: string;
   freelance: string;
   address: string;
-  phone: string;
+  Whatsapp: string;
   email: string;
-  skype: string;
+  Twitter: string;
   languages: string;
   cvUrl: string;
 }

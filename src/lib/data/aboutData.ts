@@ -11,10 +11,10 @@ export const personalInfo: PersonalInfo = {
   age: "24 Years",
   nationality: "Bangladeshi",
   freelance: "Available",
-  address: "Dhaka, Bangladesh",
-  phone: "+21621184010",
+  address: "Savar, Dhaka, Bangladesh",
+  Whatsapp: "+8801998838992",
   email: "sohelrana31006@mail.com",
-  skype: "steve.milner",
+  Twitter: "@SOHELRANA821823",
   languages: "English, Bangla",
   cvUrl: "/resume.pdf",
 };
