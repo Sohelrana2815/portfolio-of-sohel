@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useNav } from "@/context/NavContext";
 import { ArrowRight } from "lucide-react"; // Assuming you use lucide-react
 // import { motion } from "framer-motion";
@@ -50,7 +50,7 @@ export default function Hero() {
           </p>
 
           <button
-            onClick={() => scrollToSection("about")}
+            onClick={() => scrollToSection("portfolio")}
             className="group relative inline-flex items-center gap-4 w-fit xl:pl-7 xl:pr-18 pl-7 pr-16 py-4 border xl:border-2 border-[#FFB400] rounded-full overflow-hidden transition-all duration-300 cursor-pointer mx-auto xl:mx-0"
           >
             {/* 1) The filling layer — scales from right -> left */}
@@ -65,7 +65,7 @@ export default function Hero() {
 
             {/* 2) The label (above the filler) */}
             <span className="relative z-10 font-bold uppercase tracking-wide text-foreground group-hover:text-black transition-colors text-sm xl:text-base">
-              More about me
+              View My Works
             </span>
 
             {/* 3) The circular arrow (on top) */}

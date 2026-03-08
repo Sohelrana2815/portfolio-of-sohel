@@ -67,7 +67,7 @@ export default function Resume() {
         Experience &amp; Education
       </h3>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+      <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
         <TimelineColumn title="Experience" items={experience} />
         <TimelineColumn title="Education" items={education} />
       </div>

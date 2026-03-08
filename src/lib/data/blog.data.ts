@@ -28,7 +28,7 @@ const blogItem: BlogItem[] = [
       "credibility",
     ],
     image:
-      "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763202/project2_fdq93a.webp",
+      "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772952362/blog1_rber1e.webp",
     date: "March 1, 2026",
     readTime: "5 min read",
     url: "/blog/why-every-professional-needs-a-website-2026",
@@ -85,7 +85,7 @@ Owning a website isn't optional — it's a reliably visible, controllable way to
       "client acquisition",
     ],
     image:
-      "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763201/project1_luwbtm.webp",
+      "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772952362/blog2_kfq0lh.webp",
     date: "March 3, 2026",
     readTime: "6 min read",
     url: "/blog/portfolio-vs-social-media-authority",
@@ -140,7 +140,7 @@ Social gives visibility; your website turns that visibility into clients. **Want
       "portfolio website",
     ],
     image:
-      "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763202/project5_wywzm8.webp",
+      "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772952362/blog3_hrwbox.webp",
     date: "March 5, 2026",
     readTime: "7 min read",
     url: "/blog/essential-pages-professional-website",

@@ -28,9 +28,17 @@ const contactDetails: ContactDetail[] = [
 ];
 
 const socials = [
-  { label: "Facebook", href: "#", icon: "f" },
-  { label: "Twitter", href: "#", icon: "𝕏" },
-  { label: "LinkedIn", href: "#", icon: "in" },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/sohel.pro.dev",
+    icon: "f",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/sohel-rana-93423a2ba/",
+    icon: "in",
+  },
+  { label: "Twitter", href: "https://x.com/SOHELRANA821823", icon: "𝕏" },
 ] as const;
 
 export default function ContactInfo() {
@@ -85,7 +93,9 @@ export default function ContactInfo() {
             key={s.label}
             href={s.href}
             aria-label={s.label}
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-[#EEEEEE] dark:bg-zinc-800 text-center font-bold text-zinc-400 transition-all duration-200 hover:bg-[#FFB400] hover:text-foreground text-sm"
+            rel="noreferrer"
+            target="_blank"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-[#EEEEEE] dark:bg-zinc-800 text-center font-bold text-zinc-400 transition-all duration-200 hover:bg-[#FFB400] hover:text-foreground text-sm xl:text-sm"
           >
             {s.icon}
           </a>
