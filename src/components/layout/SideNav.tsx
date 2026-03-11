@@ -1,14 +1,22 @@
 "use client";
 
 import { useNav } from "@/context/NavContext";
-import { Home, User, FolderKanban, Rss } from "lucide-react";
+import {
+  Home,
+  User,
+  FolderKanban,
+  MessageSquareQuote,
+  Rss,
+  Mail,
+} from "lucide-react";
 
 const navItems = [
   { id: "home", icon: Home, label: "Home" },
   { id: "about", icon: User, label: "About" },
   { id: "portfolio", icon: FolderKanban, label: "Portfolio" },
+  { id: "testimonials", icon: MessageSquareQuote, label: "Testimonials" },
   { id: "blog", icon: Rss, label: "Blog" },
-  { id: "contact", icon: User, label: "Contact" },
+  { id: "contact", icon: Mail, label: "Contact" },
 ];
 
 export default function SideNav() {

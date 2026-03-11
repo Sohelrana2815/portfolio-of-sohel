@@ -3,7 +3,7 @@ import About from "@/components/sections/About";
 import Contact from "@/components/sections/Contact";
 import Blog from "@/components/sections/Blogs";
 import Portfolio from "@/components/sections/Portfolio";
-import Testimonial from "@/components/sections/Testimonial";
+import Testimonials from "@/components/sections/Testimonials";
 
 export default function Home() {
   return (
@@ -20,7 +20,7 @@ export default function Home() {
         <Portfolio />
       </section>
       <section id="testimonials">
-        <Testimonial />
+        <Testimonials />
       </section>
       <section id="blog">
         <Blog />
