@@ -8,45 +8,24 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Sarah Jenkins",
     role: "Product Manager • Acme Co.",
     rating: 5,
-    text: "Working with this team completely transformed our digital presence. The attention to detail and the bold design choices helped us stand out in a crowded market. Absolutely phenomenal experience from start to finish.",
-    avatar:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80",
+    text: "Sohel helped us solve several issues with our website and improved the overall user experience. His work made our online presence more professional and helped us connect with more customers.",
+    avatar: "/user/CEO.webp",
   },
   {
     id: "2",
     name: "Marcus Chen",
     role: "Founder • TechFlow",
     rating: 5,
-    text: "A rare combination of creative brilliance and technical execution. The new platform is not just beautiful, it converts at twice the rate of our old site.",
-    avatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
+    text: "Working with Sohel was a great experience. He understood our business needs and delivered solutions that improved our website performance and helped us reach more potential clients.",
+    avatar: "/user/Jack-ping.webp",
   },
   {
     id: "3",
     name: "Elena Rodriguez",
     role: "Marketing Director • Elevate",
     rating: 4,
-    text: "They understood our vision immediately and elevated it. The bold typography and dark mode aesthetic perfectly captures our brand identity.",
-    avatar:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80",
-  },
-  {
-    id: "4",
-    name: "David Kim",
-    role: "CEO • Nexus Systems",
-    rating: 5,
-    text: "Professional, trustworthy, and incredibly punchy designs. The yellow accents on the dark background give us exactly the modern edge we were looking for.",
-    avatar:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80",
-  },
-  {
-    id: "5",
-    name: "Rachel Foster",
-    role: "Lead Designer • Studio X",
-    rating: 5,
-    text: "As a designer myself, I have high standards. This team exceeded them. The micro-interactions and layout choices are simply world-class.",
-    avatar:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80",
+    text: "Sohel is professional, communicative, and very reliable. He delivered a website that solved our marketing challenges and made it easier for customers to find and trust our business.",
+    avatar: "/user/Jens-Knab.webp",
   },
 ];
 export default function TestimonialCarousel() {
@@ -137,8 +116,8 @@ export default function TestimonialCarousel() {
             Client <span className="text-[#ffb400]">Feedback</span>
           </h2>
           <p className="text-[#bdbdbd] max-w-xl mx-auto text-sm md:text-base">
-            Don&apos;t just take our word for it. Here&apos;s what industry
-            leaders have to say about our work.
+            Don’t just take our word for it. See how our solutions help
+            businesses solve problems and achieve real results.
           </p>
         </div>
 
@@ -206,12 +185,12 @@ export default function TestimonialCarousel() {
         </div>
 
         {/* CTA Button */}
-        <div className="mt-16 md:mt-24 flex justify-center">
+        {/* <div className="mt-16 md:mt-24 flex justify-center">
           <button className="group flex items-center gap-2 px-8 py-3 rounded-full border-2 border-[#ffb400] text-[#ffb400] font-bold uppercase tracking-wider text-sm hover:bg-[#ffb400] hover:text-[#0f0f10] transition-all duration-300">
             More Reviews
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );
