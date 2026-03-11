@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import TestimonialCard, { Testimonial } from "./TestimonialCard";
 const TESTIMONIALS: Testimonial[] = [
   {

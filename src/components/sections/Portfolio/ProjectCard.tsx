@@ -3,8 +3,9 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink, Github, Eye } from "lucide-react";
+import { ExternalLink, Eye } from "lucide-react";
 import type { Project } from "@/lib/data/projects.data";
+import { BsGithub } from "react-icons/bs";
 
 const FALLBACK_IMAGE = "/project1.webp";
 
@@ -86,7 +87,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             onClick={(e) => e.stopPropagation()}
             className="p-3 border border-white/30 rounded-full hover:border-[#FFB400] text-white"
           >
-            <Github size={20} />
+            <BsGithub size={20} />
           </a>
 
           <Link
