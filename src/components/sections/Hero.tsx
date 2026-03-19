@@ -1,9 +1,11 @@
 "use client";
+import { useNav } from "@/context/NavContext";
 import { ArrowRight } from "lucide-react"; // Assuming you use lucide-react
 // import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Hero() {
+  const { scrollToSection } = useNav();
   return (
     <section className="relative min-h-screen flex items-center justify-center py-10 overflow-hidden">
       {/* --- NEW DYNAMIC YELLOW BACKGROUND --- */}
@@ -42,14 +44,18 @@ export default function Hero() {
           </div>
 
           <p className="text-[#D3D3D3] text-base xl:text-lg leading-relaxed max-w-lg mx-auto xl:mx-0 text-center xl:text-left">
-            I help professionals build a powerful online presence with modern
+            {/* I help professionals build a powerful online presence with modern
             portfolio websites that increase trust, authority, and client
-            opportunities.
+            opportunities. */}
+            I’m a full stack developer focused on building modern, scalable web
+            applications and continuously improving my skills in real-world
+            development.
           </p>
 
-          <a
-            href="https://www.fiverr.com/s/KeQdxvY"
-            target="_blank"
+          <button
+            // href="https://www.fiverr.com/s/KeQdxvY"
+            onClick={() => scrollToSection("portfolio")}
+            // target="_blank"
             className="group relative inline-flex items-center gap-4 w-fit xl:pl-7 xl:pr-18 pl-7 pr-16 py-4 border xl:border-2 border-[#FFB400] rounded-full overflow-hidden transition-all duration-300 cursor-pointer mx-auto xl:mx-0"
           >
             {/* 1) The filling layer — scales from right -> left */}
@@ -65,13 +71,13 @@ export default function Hero() {
 
             <span className="relative z-10 font-bold uppercase tracking-wide text-foreground group-hover:text-black transition-colors text-sm xl:text-base ">
               {" "}
-             Let’s Work Together{" "}
+              View My Work
             </span>
             {/* 3) The circular arrow (on top) */}
             <span className="absolute right-0 top-1/2 z-20 -translate-y-1/2 w-14 h-14 rounded-full bg-[#FFB400] flex items-center justify-center transform transition-transform duration-300 font-bold hover:bg-none">
               <ArrowRight className="text-white font-bold" />
             </span>
-          </a>
+          </button>
         </div>
       </div>
     </section>
