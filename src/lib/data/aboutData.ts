@@ -20,9 +20,9 @@ export const personalInfo: PersonalInfo = {
 };
 
 export const stats: StatItem[] = [
-  { id: 1, value: "3", label: "YEARS OF\nEXPERIENCE" },
-  { id: 2, value: "20", label: "COMPLETED\nPROJECTS" },
-  { id: 3, value: "10", label: "HAPPY\nCLIENTS" },
+  { id: 1, value: "2", label: "YEARS OF\nEXPERIENCE" },
+  { id: 2, value: "10", label: "COMPLETED\nPROJECTS" },
+  // { id: 3, value: "10", label: "HAPPY\nCLIENTS" },
   { id: 4, value: "100", label: "PROBLEMS\nSOLVED" },
 ];
 
@@ -82,14 +82,14 @@ export const timeline: TimelineItem[] = [
     description:
       "Contributed to the maintenance, scalability, and technical operations of network infrastructure for a prominent firm.",
   },
-  {
-    id: 5,
-    type: "education",
-    startYear: "2016",
-    endYear: "2020",
-    title: "B.A. in Islamic Studies",
-    org: "National University",
-    description:
-      "Comprehensive academic study of Islamic principles, law, and history, fostering strong analytical and research capabilities.",
-  },
+  // {
+  //   id: 5,
+  //   type: "education",
+  //   startYear: "2016",
+  //   endYear: "2020",
+  //   title: "B.A. in Islamic Studies",
+  //   org: "National University",
+  //   description:
+  //     "Comprehensive academic study of Islamic principles, law, and history, fostering strong analytical and research capabilities.",
+  // },
 ];

@@ -13,7 +13,7 @@ export type TechId =
   | "express"
   | "firebase"
   | "redux"
-  | "stripe"
+  // | "stripe"
   | "html"
   | "css"
   | "javascript";
@@ -35,7 +35,7 @@ export const TECH_CATALOG: Record<TechId, TechItem> = {
   express: { id: "express", label: "Express", color: "#444444" },
   firebase: { id: "firebase", label: "Firebase", color: "#FFCA28" },
   redux: { id: "redux", label: "Redux", color: "#764ABC" },
-  stripe: { id: "stripe", label: "Stripe", color: "#635BFF" },
+  // stripe: { id: "stripe", label: "Stripe", color: "#635BFF" },
   html: { id: "html", label: "HTML5", color: "#E34F26" },
   css: { id: "css", label: "CSS3", color: "#1572B6" },
   javascript: { id: "javascript", label: "JavaScript", color: "#F7DF1E" },
@@ -124,7 +124,7 @@ I designed and built a full-stack platform that covers the entire delivery lifec
       "https://res.cloudinary.com/djmhyrvxd/image/upload/v1772763201/project1_luwbtm.webp",
     liveUrl: "https://root-guide-frontend.vercel.app",
     repoUrl: "https://github.com/Sohelrana2815/root-guide-frontend",
-    techStack: ["react", "tailwind", "mongodb", "nodejs", "express", "stripe"],
+    techStack: ["react", "tailwind", "mongodb", "nodejs", "express"],
     role: "Full-Stack Developer",
     features: [
       "Guide verification and profile management system",
