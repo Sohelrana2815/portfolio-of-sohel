@@ -145,7 +145,7 @@ Tourists struggle to find reliable local guides, and independent guides lack a p
 
 I built a two-sided marketplace that serves both tourists and guides:
 
-1. **For tourists** — browse verified guides by location, read reviews, check availability, and book instantly with secure Stripe payments.
+1. **For tourists** — browse verified guides by location, read reviews, check availability, and book instantly with secure sslcommerz payments.
 2. **For guides** — create professional profiles, manage their calendar, track earnings, and build reputation through reviews.
 3. **For admins** — verify guide applications, monitor transactions, and access analytics dashboards.
 
