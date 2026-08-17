@@ -23,7 +23,7 @@ export default function Hero() {
           {/* Main Image Container */}
           <div className="relative h-60 w-60 xl:h-full xl:w-full rounded-full xl:rounded-3xl overflow-hidden shadow-2xl border-4 border-zinc-800">
             <Image
-              src="/profile.webp"
+              src="/profile.jpg"
               alt="Sohel Rana"
               fill
               className="object-cover"
@@ -38,18 +38,14 @@ export default function Hero() {
           <div className="flex items-center gap-4 justify-center xl:justify-start">
             <span className="w-12 h-0.5 bg-[#FFB400] hidden xl:block"></span>
             <h1 className="text-3xl lg:text-4xl xl:text-5xl font-extrabold uppercase text-foreground leading-tight text-center xl:text-left">
-              I&apos;m Sohel Rana <br />
+              I&apos;m MD. Sohel Rana <br />
               <span className="text-[#FFB400]">Full Stack Developer</span>
             </h1>
           </div>
 
           <p className="text-[#D3D3D3] text-base xl:text-lg leading-relaxed max-w-lg mx-auto xl:mx-0 text-center xl:text-left">
-            {/* I help professionals build a powerful online presence with modern
-            portfolio websites that increase trust, authority, and client
-            opportunities. */}
-            I’m a full stack developer focused on building modern, scalable web
-            applications and continuously improving my skills in real-world
-            development.
+            I enjoy solving problems and building reliable, scalable, and
+            user-centric web applications with modern technologies.
           </p>
 
           <button

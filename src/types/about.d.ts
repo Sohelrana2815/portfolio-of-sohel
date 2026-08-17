@@ -1,14 +1,16 @@
 export interface PersonalInfo {
   firstName: string;
   lastName: string;
-  age: string;
-  nationality: string;
-  freelance: string;
+  // nationality: string;
+  // freelance: string;
   address: string;
   Whatsapp: string;
   email: string;
-  Twitter: string;
-  languages: string;
+  // Twitter: string;
+  availability: string;
+  language: string;
+  focus: string;
+  interests: string;
   cvUrl: string;
 }
 

@@ -11,7 +11,7 @@ function StatCard({ item }: { item: StatItem }) {
     <div className="border border-muted  rounded-lg p-6 flex flex-col items-start gap-2">
       <span className="text-4xl lg:text-5xl font-extrabold text-[#FFB400]">
         <strong>{item.value}</strong>
-        <sup className="text-lg align-super">+</sup>
+        {/* <sup className="text-lg align-super">+</sup> */}
       </span>
 
       <div className="flex items-center gap-2">
@@ -64,28 +64,31 @@ export default function InfoStats() {
       {/* LEFT – Personal Info */}
       <div className="space-y-6">
         <h3 className="text-xl sm:text-2xl font-bold uppercase text-foreground">
-          Personal Infos
+          Personal Informations
         </h3>
 
         <div className="grid grid-cols-2 gap-y-4 gap-x-6">
-          <InfoRow label="First Name" value={info.firstName} />
-          <InfoRow label="Last Name" value={info.lastName} />
-          <InfoRow label="Age" value={info.age} />
-          <InfoRow label="Nationality" value={info.nationality} />
-          <InfoRow label="Freelance" value={info.freelance} />
-          <InfoRow label="Address" value={info.address} />
+          <InfoRow label="Full Name" value={info.firstName} />
+          {/* <InfoRow label="Last Name" value={info.lastName} /> */}
+
+          <InfoRow label="Location" value={info.address} />
+          {/* 
           <InfoRow
-            label="Whatsapp"
+            label="WhatsApp"
             value={info.Whatsapp}
             href={`tel:${info.Whatsapp}`}
-          />
+          /> */}
+
           <InfoRow
             label="Email"
             value={info.email}
             href={`mailto:${info.email}`}
           />
-          <InfoRow label="Twitter" value={info.Twitter} />
-          <InfoRow label="Languages" value={info.languages} />
+
+          <InfoRow label="Focus" value={info.focus} />
+          <InfoRow label="Interests" value={info.interests} />
+          <InfoRow label="Language" value={info.language} />
+          <InfoRow label="Availability" value={info.availability} />
         </div>
 
         {/* Download CV */}

@@ -5,27 +5,11 @@ import TestimonialCard, { Testimonial } from "./TestimonialCard";
 const TESTIMONIALS: Testimonial[] = [
   {
     id: "1",
-    name: "Sarah Jenkins",
-    role: "Product Manager • Acme Co.",
+    name: "Md. Tomal Siddique",
+    role: "Website Malware Removal Expert",
     rating: 5,
-    text: "Sohel helped us solve several issues with our website and improved the overall user experience. His work made our online presence more professional and helped us connect with more customers.",
-    avatar: "/user/CEO.webp",
-  },
-  {
-    id: "2",
-    name: "Marcus Chen",
-    role: "Founder • TechFlow",
-    rating: 5,
-    text: "Working with Sohel was a great experience. He understood our business needs and delivered solutions that improved our website performance and helped us reach more potential clients.",
-    avatar: "/user/Jack-ping.webp",
-  },
-  {
-    id: "3",
-    name: "Elena Rodriguez",
-    role: "Marketing Director • Elevate",
-    rating: 4,
-    text: "Sohel is professional, communicative, and very reliable. He delivered a website that solved our marketing challenges and made it easier for customers to find and trust our business.",
-    avatar: "/user/Jens-Knab.webp",
+    text: "Sohel did an excellent job turning my ideas into a professional and modern website. He was responsive, understood my requirements well, and paid attention to the details. I'm very happy with the final result and would definitely recommend his work.",
+    avatar: "/user/client-image.jpeg",
   },
 ];
 export default function TestimonialCarousel() {
@@ -115,10 +99,7 @@ export default function TestimonialCarousel() {
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 uppercase tracking-tight">
             Client <span className="text-[#ffb400]">Feedback</span>
           </h2>
-          <p className="text-[#bdbdbd] max-w-xl mx-auto text-sm md:text-base">
-            Don’t just take our word for it. See how our solutions help
-            businesses solve problems and achieve real results.
-          </p>
+      
         </div>
 
         <div className="relative flex items-center justify-center h-112.5 md:h-100">

@@ -64,7 +64,7 @@ export default function Resume() {
   return (
     <div className="space-y-10">
       <h3 className="text-xl md:text-2xl xl:text-3xl font-bold uppercase text-center text-white dark:text-white">
-        Experience &amp; Education
+        Experience
       </h3>
 
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">

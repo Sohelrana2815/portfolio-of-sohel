@@ -16,7 +16,7 @@ export default function Portfolio() {
           </span>
 
           <h2 className="relative text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold uppercase text-white">
-            My <span className="text-[#FFB400]">Portfolio</span>
+            <span className="text-[#FFB400]">Portfolio</span>
           </h2>
 
           {/* Small dot accent */}
